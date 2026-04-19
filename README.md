@@ -145,23 +145,6 @@ OLLAMA_HOST=0.0.0.0 ollama serve
 7. **No response?**  
    - Tap "Config" in the chat UI and ensure "Laptop IP" is set to `192.168.4.2`.
 
-### Operational Workflow
-
-```mermaid
-graph TD
-  A[Power On ESP8266] --> B{ESP8266 Creates<br>LLM-Bridge WiFi}
-  B --> C[Laptop Connects to LLM-Bridge<br>WiFi with Password: llm12345]
-  C --> D[Start Ollama Server on Laptop<br>(bind: 0.0.0.0)]
-  D --> E[Smartphone/User Device Connects<br>to LLM-Bridge WiFi]
-  E --> F[Open Browser:<br>http://192.168.4.1]
-  F --> G{Is AI Responding?}
-  G -- Yes --> H[Chat with Offline AI!]
-  G -- No --> I[Open Config in Chat UI<br>Set Laptop IP to 192.168.4.2]
-  I --> G
-```
-
----
-
 ## How It Works
 
 ### Request/Response Flow
